@@ -27,6 +27,22 @@ document.querySelectorAll("[data-contact-email]").forEach((link) => {
   link.setAttribute("href", `mailto:${SITE_SETTINGS.contactEmail}`);
 });
 
+document.querySelector("[data-copy-email]")?.addEventListener("click", async (event) => {
+  const button = event.currentTarget;
+  const originalText = button.textContent;
+
+  try {
+    await navigator.clipboard.writeText(SITE_SETTINGS.contactEmail);
+    button.textContent = "Copied";
+  } catch {
+    button.textContent = SITE_SETTINGS.contactEmail;
+  }
+
+  window.setTimeout(() => {
+    button.textContent = originalText;
+  }, 2200);
+});
+
 document.querySelector("#contact-form")?.addEventListener("submit", (event) => {
   event.preventDefault();
 
