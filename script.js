@@ -1,5 +1,5 @@
 const SITE_SETTINGS = {
-  contactEmail: "hello@uknowwhowebdesign.co.uk",
+  contactEmail: "hudsoncameron0808@proton.me",
 };
 
 const menuButton = document.querySelector(".menu-button");
